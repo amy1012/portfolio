@@ -1,0 +1,123 @@
+:root{
+  --bg:#ffffff;        /* page background */
+  --fg:#000000;        /* text color */
+  --muted:#f3f4f6;     /* chips */
+  --hover:#6b7280;     /* gray hover */
+  --header-h:76px;     /* fixed header height */
+  --page-pad:96px;     /* vertical padding for each project section */
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Noto Sans,Arial;
+  background:var(--bg);
+  color:var(--fg);
+}
+
+/* Container */
+.container{ max-width:1200px; margin:0 auto; padding:0 24px; }
+
+/* Topbar (no bottom line) */
+.topbar{
+  position:fixed; inset:0 0 auto 0;
+  background:#fff; z-index:50;
+}
+.topbar .container{
+  height:var(--header-h);
+  display:flex; align-items:center; justify-content:space-between;
+}
+.brand{
+  text-decoration:none; color:var(--fg);
+  font-weight:800; font-size:28px; letter-spacing:.5px;
+}
+.nav{ display:flex; gap:28px; }
+.nav-link{
+  text-decoration:none; color:var(--fg);    /* black */
+  font-weight:600; padding:8px 2px; border-radius:6px;
+}
+.nav-link:hover{ color:var(--hover); }      /* gray on hover */
+.nav-link:visited{ color:var(--fg); }
+
+/* Sections */
+.section{ min-height:100vh; display:flex; align-items:center; }
+.hero{ padding:120px 0 64px; }
+.hero-inner{ width:100%; }
+.hero-title{
+  font-size:clamp(42px,7vw,56px);
+  line-height:1.1; margin:0 0 12px 0; font-weight:800;
+}
+.hero-sub{ margin:0; font-size:18px; color:#444; }
+
+/* Each project = its own full-page section */
+.project-page{
+  padding:var(--page-pad) 0;
+  /* anchor offset so跳轉後卡片不會被頂部bar遮住 */
+  scroll-margin-top: calc(var(--header-h) + 12px);
+}
+.project-page .container{
+  width:100%; display:flex; justify-content:center;
+}
+
+/* Card: wide horizontal rounded rectangle; no border; hover = soft shadow only */
+.project-card{
+  display:block; color:inherit; text-decoration:none;
+  width:min(100%, 1120px);
+  margin:0 auto;
+  padding:36px;
+  background:#fff;
+  border-radius:28px;
+  box-shadow:0 0 0 rgba(0,0,0,0);
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+.project-card:hover,
+.project-card:focus{
+  box-shadow:0 20px 56px rgba(0,0,0,.14);
+  transform: translateY(-2px);
+  outline:none;
+}
+
+/* Title + chips */
+.project-head{ display:grid; gap:14px; }
+.project-title{ margin:0; font-size:clamp(28px,4vw,40px); font-weight:800; }
+
+.chip-row{
+  display:flex; flex-wrap:wrap; gap:12px;
+  padding:0; margin:0; list-style:none;
+}
+.chip{
+  padding:10px 14px; background:var(--muted);
+  border-radius:999px; font-size:14px; color:#222;
+}
+
+/* --- Fit-to-viewport media sizing ---
+   1) 圖片維持橫向長方形（rounded）
+   2) 高度限制：不超過視窗高度的 50%～60%（依螢幕自適應）
+   3) 這樣整張卡片（標題 + 技術 + 圖片）會在同一個視窗內完整顯示
+*/
+.project-media{
+  margin-top:24px;
+  width:100%;
+  height: clamp(240px, 52vh, 520px);   /* ★關鍵：跟視窗高度綁定，避免超出頁面 */
+  border-radius:20px;
+  overflow:hidden;
+  background:#e9e9e9;                  /* placeholder if missing */
+}
+.project-media img{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+
+/* Footer */
+.footer{ background:#000; color:#fff; }
+.footer .container{
+  min-height:72px; display:flex; align-items:center; justify-content:center;
+}
+
+/* Mobile tweaks */
+@media (max-width:640px){
+  .topbar .container{ height:68px; }
+  .project-card{ width:100%; padding:22px; border-radius:22px; }
+  .project-media{ height: clamp(200px, 46vh, 420px); }
+}
