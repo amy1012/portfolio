@@ -1,0 +1,43 @@
+@import url('../style.css');
+
+/* 專案頁面額外樣式 */
+.narrow {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 內容區塊間距 */
+.section-block {
+  margin: 64px 0;
+}
+
+.section-block h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.section-block p {
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+}
+
+/* 技術 chip 沿用主站 */
+.chip-row { margin-top: 12px; }
+
+/* 圖片容器，承襲主站的 project-media */
+.project-media {
+  margin-top: 24px;
+  width: 100%;
+  height: clamp(240px, 52vh, 520px);
+  border-radius: 20px;
+  overflow: hidden;
+  background: #e9e9e9;
+}
+
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
