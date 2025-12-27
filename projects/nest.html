@@ -2,92 +2,290 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nest — ChienTing Wang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEST - Project</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <!-- 獨立的 nest.css，裡面會覆蓋/延伸主題 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="nest.css" />
 </head>
 <body>
-  <!-- Top Bar -->
+
   <header class="topbar">
     <div class="container">
       <a class="brand" href="../index.html">CT.</a>
       <nav class="nav">
         <a href="../index.html" class="nav-link">Home</a>
         <a href="../index.html#projects" class="nav-link">Projects</a>
-        <a href="../resume.html" class="nav-link">Resume</a>
-        <a href="../about.html" class="nav-link">About</a>
+        <a href="../resume.pdf" target="_blank" class="nav-link">Resume</a>
       </nav>
     </div>
   </header>
 
-  <main class="section">
-    <div class="container narrow">
-      <h1 class="hero-title">Nest</h1>
-      <p class="hero-sub">A second-hand clothing rental & purchase platform</p>
-
-      <!-- Overview -->
-      <section class="section-block">
-        <h2>Overview</h2>
-        <p>
-          Nest is a second-hand clothing rental and purchase platform designed for university students.
-          The project originated from our concern about the environmental waste caused by fast fashion
-          and the large number of unused but well-preserved clothes in students’ closets.
-        </p>
-        <p>
-          Through Nest, we aimed to provide consumers with a quick way to purchase or rent clothing,
-          allow sellers to gain extra income from idle clothes, and offer rental as an alternative
-          for users who are uncertain about size or want to experiment with new styles:contentReference[oaicite:1]{index=1}.
-        </p>
-      </section>
-
-      <!-- My Role -->
-      <section class="section-block">
-        <h2>My Role</h2>
-        <ul>
-          <li>Co-developer, responsible for UI design</li>
-          <li>Feature design</li>
-          <li>Botpress chatbot development</li>
-          <li>Seller dashboard implementation</li>
-        </ul>
-      </section>
-
-      <!-- Duration -->
-      <section class="section-block">
-        <h2>Duration</h2>
-        <p><strong>3 months</strong> (MIS205 Database Management)</p>
-      </section>
-
-      <!-- Technologies -->
-      <section class="section-block">
-        <h2>Technologies Used</h2>
-        <ul class="chip-row">
-          <li class="chip">HTML</li>
-          <li class="chip">CSS</li>
-          <li class="chip">JavaScript</li>
-          <li class="chip">PHP</li>
-          <li class="chip">MySQL</li>
-          <li class="chip">Botpress</li>
-        </ul>
-      </section>
-
-      <!-- Screens -->
-      <section class="section-block">
-        <h2>Screens</h2>
-        <div class="project-media">
-          <img src="../assets/nest.png" alt="Nest preview">
+  <main>
+    <header class="project-hero-wrapper">
+      <div class="container">
+        <div class="hero-text">
+          <h1 class="hero-title">NEST</h1>
+          <p class="hero-subtitle">A Second-hand Clothing Rental & Purchase Platform</p>
         </div>
-      </section>
-    </div>
-  </main>
+        
+        <div class="hero-image-container">
+            <img src="../img/nest/nest.png" alt="Nest Platform Interface" onerror="this.src='https://placehold.co/1000x600/EEEBF5/5E4389?text=Nest+Hero+Image';" />
+        </div>
 
+        <div class="hero-metadata">
+          <div class="meta-col">
+            <h3>Duration</h3>
+            <p>3 Months<br>(Database Management)</p>
+          </div>
+          <div class="meta-col">
+            <h3>My Role</h3>
+            <p>Full-stack Developer<br>UI/UX Designer</p>
+          </div>
+          <div class="meta-col">
+            <h3>Tech Stack</h3>
+            <p>PHP, MySQL, JavaScript,<br>Botpress, HTML/CSS</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="project-sub-nav" id="sub-nav">
+      <div class="container sub-nav-container">
+        <a href="#overview" class="sub-link">Overview</a>
+        <a href="#design" class="sub-link">System Design</a>
+        <a href="#database" class="sub-link">Database</a>
+        <a href="#challenges" class="sub-link">Challenges</a>
+        <a href="#screens" class="sub-link">Interface</a>
+      </div>
+    </nav>
+
+    <section id="overview" class="content-section">
+      <div class="container">
+        <span class="section-number">01 OVERVIEW</span>
+        
+        <div class="split-layout">
+          <div class="split-left">
+            <h2 class="section-heading">Tackling fast fashion waste through a circular economy.</h2>
+          </div>
+          <div class="split-right">
+            <p class="section-desc">
+              <strong>The Problem:</strong> Fast fashion contributes significantly to environmental waste, yet many university students have closets full of well-preserved but unused clothes.
+            </p>
+            <p class="section-desc" style="margin-top:20px;">
+              <strong>The Solution:</strong> NEST is a campus-based platform that integrates <strong>rental and purchase</strong> options. It allows students to monetize idle clothes while offering others a sustainable, low-cost way to experiment with new styles.
+            </p>
+          </div>
+        </div>
+
+        <div class="overview-vertical-stack">
+            <div class="ov-card">
+                <h3 class="ov-title">MY CONTRIBUTION</h3>
+                <ul class="role-list">
+                    <li><strong>System Architecture:</strong> Designed the EERD and Relational Schema to support complex hybrid user roles (Buyer/Seller) and dual transaction modes (Rent/Buy).</li>
+                    <li><strong>Feature Implementation:</strong> Developed the "Seller Dashboard" for data visualization and the "Recommendation System" using collaborative filtering logic.</li>
+                    <li><strong>AI Integration:</strong> Built and integrated a <strong>Botpress chatbot</strong> to handle FAQs regarding sizing and rental policies, reducing user uncertainty.</li>
+                </ul>
+            </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="design" class="content-section">
+      <div class="container">
+        <span class="section-number">02 SYSTEM DESIGN</span>
+        <h2 class="section-heading">Advanced Features</h2>
+        
+        <div class="tech-grid">
+            <div class="tech-card">
+                <h4>Smart Assistance (Chatbot)</h4>
+                <p>Integrated a <strong>Botpress</strong> chatbot to provide instant responses to rental policies and sizing queries, directly addressing the "uncertainty" pain point in second-hand trading.</p>
+            </div>
+            <div class="tech-card">
+                <h4>Personalized Recommendation</h4>
+                <p>Implemented a recommendation engine based on <strong>Collaborative Filtering</strong>. It analyzes user likes and browse history to suggest relevant items.</p>
+            </div>
+            <div class="tech-card">
+                <h4>Data Visualization Dashboard</h4>
+                <p>Designed a seller dashboard that visualizes sales data and expenses using charts, empowering student sellers to track their "micro-business" performance.</p>
+            </div>
+        </div>
+
+        <div class="scenarios-wrapper" style="margin-top: 80px;">
+            <div class="scenario-card">
+                <h4>Buyer Scenario</h4>
+                <p>“I want to try a bold style for a party but don't want to buy an expensive item I'll only wear once.”</p>
+                <div class="s-solution">
+                    <strong>Solution:</strong> Rental Option & Transparent Reviews.
+                </div>
+            </div>
+            
+            <div class="scenario-card">
+                <h4>Seller Scenario</h4>
+                <p>“I have too many clothes in my dorm. I want to clear space and earn some pocket money.”</p>
+                <div class="s-solution">
+                    <strong>Solution:</strong> Quick Listing & Earning Dashboard.
+                </div>
+            </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="database" class="content-section">
+      <div class="container">
+        <span class="section-number">03 DATABASE ARCHITECTURE</span>
+        <h2 class="section-heading">Complex Transaction Logic</h2>
+        
+        <div class="split-layout">
+            <div class="split-left">
+                <p class="section-desc">
+                    A core challenge was designing a schema that supports <strong>Hybrid Roles</strong> (a single user can be both a buyer and a seller) and <strong>Dual Transaction Modes</strong> (an item can be sold or rented).
+                </p>
+                <ul class="role-list" style="margin-top:20px;">
+                    <li><strong>Entity Integrity:</strong> Users are managed under a single `Member` entity but can trigger `Buyer` or `Seller` actions.</li>
+                    <li><strong>Transaction Logic:</strong> The `Transaction` entity handles both purchase and rental logic, linking to specific `Rental Records` for deadline tracking.</li>
+                </ul>
+            </div>
+            <div class="split-right">
+                <div class="architecture-img">
+                    <img src="../img/nest/nest_er.png" alt="EER Diagram" onerror="this.src='https://placehold.co/600x400/EEEBF5/5E4389?text=EER+Diagram';" />
+                    <p class="caption">Extended Entity-Relationship (EER) Diagram</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="schema-container" style="margin-top: 80px;">
+            <h3 class="subsection-title" style="text-align: center;">Relational Schema</h3>
+            <div class="architecture-img full-width">
+                <img src="../img/nest/nest_schema.png" alt="Relational Schema" onerror="this.src='https://placehold.co/1000x500/EEEBF5/5E4389?text=Relational+Schema';" />
+            </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="challenges" class="content-section">
+      <div class="container">
+        <span class="section-number">04 TECHNICAL CHALLENGES</span>
+        <h2 class="section-heading">Problem Solving</h2>
+        
+        <div class="overview-vertical-stack">
+            <div class="ov-card">
+                <h3 class="ov-title">Challenge 1: Image Data Handling</h3>
+                <p class="ov-desc">
+                    <strong>Issue:</strong> We faced a discrepancy where images uploaded directly via SQL query displayed correctly, but images uploaded through the web interface failed to render properly.
+                </p>
+                <p class="ov-desc">
+                    <strong>Solution:</strong> We adjusted the strategy to store <strong>file paths</strong> in the database while keeping actual images in a server directory, improving performance and reliability.
+                </p>
+            </div>
+
+            <div class="ov-card">
+                <h3 class="ov-title">Challenge 2: Chatbot Integration Costs</h3>
+                <p class="ov-desc">
+                    <strong>Issue:</strong> Initially planned to use ChatGPT API, but the cost was prohibitive.
+                </p>
+                <p class="ov-desc">
+                    <strong>Solution:</strong> Pivoted to <strong>Botpress</strong>. I designed conversation flows to query our internal FAQ database first, ensuring accurate answers without high API costs.
+                </p>
+            </div>
+        </div>
+
+        <div class="insight-box">
+             <p>"Successfully delivered a fully functional platform. The project received high marks for its comprehensive database design and the integration of the seller dashboard."</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="screens" class="content-section">
+      <div class="container">
+        <span class="section-number">05 SYSTEM INTERFACE</span>
+        <h2 class="section-heading">Key Features & User Flow</h2>
+        <p class="section-desc" style="margin-bottom: 60px;">
+          The platform serves two distinct user groups: Buyers and Sellers. Below are the key interfaces designed for smooth transactions.
+        </p>
+
+        <div class="gallery-grid">
+          
+          <figure class="screen-card">
+            <div class="browser-frame">
+              <img src="../img/nest/nest_screen1.png" alt="Product Listing Page" onerror="this.src='https://placehold.co/600x400/EEEBF5/5E4389?text=Product+Page';" />
+            </div>
+            <figcaption>
+              <h4>Intuitive Shopping Experience</h4>
+              <p>Users can browse items with clear filters for "Buy" or "Rent".</p>
+            </figcaption>
+          </figure>
+
+          <figure class="screen-card">
+            <div class="browser-frame">
+              <img src="../img/nest/nest_screen2.png" alt="Chatbot Interface" onerror="this.src='https://placehold.co/600x400/EEEBF5/5E4389?text=Chatbot+Interface';" />
+            </div>
+            <figcaption>
+              <h4>AI-Powered Support</h4>
+              <p>Integrated Botpress chatbot floats on the screen to answer questions instantly.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="screen-card">
+            <div class="browser-frame">
+              <img src="../img/nest/nest_screen3.png" alt="Seller Dashboard" onerror="this.src='https://placehold.co/600x400/EEEBF5/5E4389?text=Seller+Dashboard';" />
+            </div>
+            <figcaption>
+              <h4>Seller Dashboard</h4>
+              <p>A comprehensive dashboard visualizes earnings and order status.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="screen-card">
+            <div class="browser-frame">
+              <img src="../img/nest/nest_screen4.png" alt="Product Management" onerror="this.src='https://placehold.co/600x400/EEEBF5/5E4389?text=Product+Upload';" />
+            </div>
+            <figcaption>
+              <h4>Streamlined Listing Process</h4>
+              <p>Sellers can easily upload items with structured data for better searchability.</p>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
   <footer class="footer">
     <div class="container">
-      <small>c 2025 by ChienTing</small>
+      <small>&copy; 2025 by ChienTing Wang</small>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".sub-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (pageYOffset >= sectionTop - 300) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (current && link.getAttribute("href").includes(current)) {
+            link.classList.add("active");
+          }
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>

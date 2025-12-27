@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NSBlog - Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="nsblog.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="../index.html">CT.</a>
+      <nav class="nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../resume.pdf" target="_blank" class="nav-link">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <header class="project-hero-wrapper">
+      <div class="container">
+        <div class="hero-text">
+          <h1 class="hero-title">NSBlog</h1>
+          <p class="hero-subtitle">A Nature-Themed Content Management System</p>
+        </div>
+        
+        <div class="hero-image-container">
+            <img src="../img/nsblog/nsblog.png" alt="NSBlog Interface" onerror="this.src='https://placehold.co/1000x600/EDF7ED/4A6741?text=NSBlog+Home';" />
+        </div>
+
+        <div class="hero-metadata">
+          <div class="meta-col">
+            <h3>Duration</h3>
+            <p>1 Semester<br>(Web Programming)</p>
+          </div>
+          <div class="meta-col">
+            <h3>My Role</h3>
+            <p>Frontend Developer<br>UI Designer</p>
+          </div>
+          <div class="meta-col">
+            <h3>Tech Stack</h3>
+            <p>PHP, MySQL, Bootstrap,<br>AJAX, CKEditor</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="project-sub-nav" id="sub-nav">
+      <div class="container sub-nav-container">
+        <a href="#overview" class="sub-link">Overview</a>
+        <a href="#design" class="sub-link">Design Philosophy</a>
+        <a href="#features" class="sub-link">Key Features</a>
+        <a href="#screens" class="sub-link">Interface</a>
+      </div>
+    </nav>
+
+    <section id="overview" class="content-section">
+      <div class="container">
+        <span class="section-number">01 OVERVIEW</span>
+        
+        <div class="split-layout">
+          <div class="split-left">
+            <h2 class="section-heading">Sharing nature, connecting travelers.</h2>
+          </div>
+          <div class="split-right">
+            <p class="section-desc">
+              <strong>NSBlog</strong> is a dynamic web platform designed for travelers who want to share their experiences in nature. The goal was to build a fully functional Content Management System (CMS) that allows users to easily publish stories, while providing readers with a clean, immersive reading environment.
+            </p>
+            <p class="section-desc" style="margin-top:20px;">
+              The project emphasizes <strong>scannability</strong> and <strong>ease of use</strong>, ensuring that the beauty of the photos and stories takes center stage.
+            </p>
+          </div>
+        </div>
+
+        <div class="overview-vertical-stack">
+            <div class="ov-card">
+                <h3 class="ov-title">MY CONTRIBUTION</h3>
+                <ul class="role-list">
+                    <li><strong>UI/UX Design:</strong> Designed the overall layout and visual style using CSS and Bootstrap, focusing on readability and contrast.</li>
+                    <li><strong>Frontend Development:</strong> Implemented the responsive grid system and integrated <strong>CKEditor</strong> for rich text editing.</li>
+                    <li><strong>System Integration:</strong> Collaborated with backend developers to connect the frontend forms with PHP/MySQL utilizing AJAX for smooth data handling.</li>
+                </ul>
+            </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="design" class="content-section">
+      <div class="container">
+        <span class="section-number">02 DESIGN CONSIDERATIONS</span>
+        <h2 class="section-heading">Prioritizing Readability & Navigation</h2>
+        
+        <div class="tech-grid">
+            <div class="tech-card">
+                <h4>Intuitive Navigation</h4>
+                <p>Adopted a simple, flat hierarchy. The navigation bar is persistent, allowing users to switch between "Home", "All Posts", and "Backend" seamlessly without getting lost.</p>
+            </div>
+            <div class="tech-card">
+                <h4>Scannable Layout</h4>
+                <p>Used a card-based layout for the blog feed. Large thumbnails and concise titles allow users to quickly scan multiple stories and find what interests them.</p>
+            </div>
+            <div class="tech-card">
+                <h4>Clear Contrast</h4>
+                <p>Selected a color palette inspired by nature (Earth Green & Cream White). High contrast between text and background ensures accessibility and readability for long-form content.</p>
+            </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="features" class="content-section">
+      <div class="container">
+        <span class="section-number">03 KEY FEATURES</span>
+        <h2 class="section-heading">Dynamic Content Management</h2>
+        <p class="section-desc" style="margin-bottom: 40px;">
+            Beyond the frontend, we built a robust backend system to handle data persistence and user management.
+        </p>
+        
+        <div class="overview-vertical-stack">
+            <div class="ov-card">
+                <h3 class="ov-title">CRUD Operations</h3>
+                <p class="ov-desc">
+                    <strong>Create, Read, Update, Delete.</strong> Authorized users can manage their posts through a dedicated dashboard. We implemented image uploading logic that stores file paths in the MySQL database while saving the actual assets on the server.
+                </p>
+            </div>
+
+            <div class="ov-card">
+                <h3 class="ov-title">Account Management</h3>
+                <p class="ov-desc">
+                    Administrators have access to an account management panel to oversee user activity. The system includes secure login/logout functionality using PHP sessions to protect backend routes.
+                </p>
+            </div>
+            
+            <div class="ov-card">
+                <h3 class="ov-title">Smart Search</h3>
+                <p class="ov-desc">
+                    Implemented a keyword-based search function that queries the database for matching titles or content, helping users quickly find specific travel destinations.
+                </p>
+            </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="screens" class="content-section">
+      <div class="container">
+        <span class="section-number">04 SYSTEM INTERFACE</span>
+        <h2 class="section-heading">Responsive Features Walkthrough</h2>
+        <p class="section-desc" style="margin-bottom: 60px;">
+          Every interface in NSBlog is designed to adapt fluidly across devices. Below is a side-by-side comparison of key features on desktop and mobile views.
+        </p>
+
+        <figure class="interface-pair">
+            <div class="pair-header">
+                <h3>1. Responsive Home & Navigation</h3>
+            </div>
+            <div class="pair-layout">
+                <div class="desktop-wrapper">
+                    <div class="browser-frame">
+                        <img src="../img/nsblog/nsblog_screen1.png" alt="Desktop Home" onerror="this.src='https://placehold.co/1000x600/EDF7ED/4A6741?text=Desktop+Home';" />
+                    </div>
+                    <span class="device-label">Desktop View</span>
+                </div>
+                <div class="mobile-wrapper">
+                    <div class="mobile-frame">
+                        <img src="../img/nsblog/nsblog_screen2.png" alt="Mobile Home" onerror="this.src='https://placehold.co/375x812/EDF7ED/4A6741?text=Mobile+Home';" />
+                    </div>
+                    <span class="device-label">Mobile View</span>
+                </div>
+            </div>
+            <figcaption class="pair-caption">
+                The navigation bar automatically collapses into a hamburger menu on smaller screens. The multi-column blog grid transforms into a single-column feed for better scrollability on mobile devices.
+            </figcaption>
+        </figure>
+
+        <figure class="interface-pair">
+            <div class="pair-header">
+                <h3>2. Post Management Dashboard</h3>
+            </div>
+            <div class="pair-layout">
+                <div class="desktop-wrapper">
+                    <div class="browser-frame">
+                        <img src="../img/nsblog/nsblog_screen3.png" alt="Desktop Backend" onerror="this.src='https://placehold.co/1000x600/EDF7ED/4A6741?text=Desktop+Backend';" />
+                    </div>
+                    <span class="device-label">Desktop View</span>
+                </div>
+                <div class="mobile-wrapper">
+                    <div class="mobile-frame">
+                        <img src="../img/nsblog/nsblog_screen4.png" alt="Mobile Backend" onerror="this.src='https://placehold.co/375x812/EDF7ED/4A6741?text=Mobile+Backend+List';" />
+                    </div>
+                    <span class="device-label">Mobile View</span>
+                </div>
+            </div>
+            <figcaption class="pair-caption">
+                The admin table allows for quick post management. On mobile, the table layout is optimized to ensure data remains legible without breaking the layout.
+            </figcaption>
+        </figure>
+
+        <figure class="interface-pair">
+            <div class="pair-header">
+                <h3>3. Rich Content Editor</h3>
+            </div>
+            <div class="pair-layout">
+                <div class="desktop-wrapper">
+                    <div class="browser-frame">
+                        <img src="../img/nsblog/nsblog_screen5.png" alt="Desktop Editor" onerror="this.src='https://placehold.co/1000x600/EDF7ED/4A6741?text=Desktop+Editor';" />
+                    </div>
+                    <span class="device-label">Desktop View</span>
+                </div>
+                <div class="mobile-wrapper">
+                    <div class="mobile-frame">
+                        <img src="../img/nsblog/nsblog_screen6.png" alt="Mobile Editor" onerror="this.src='https://placehold.co/375x812/EDF7ED/4A6741?text=Mobile+CKEditor';" />
+                    </div>
+                    <span class="device-label">Mobile View</span>
+                </div>
+            </div>
+            <figcaption class="pair-caption">
+                Integrated CKEditor scales down gracefully. The toolbar wraps appropriately, allowing users to write and format travel stories comfortably even on smaller screens.
+            </figcaption>
+        </figure>
+
+        <figure class="interface-pair">
+            <div class="pair-header">
+                <h3>4. Account & Secure Login</h3>
+            </div>
+            <div class="pair-layout">
+                <div class="desktop-wrapper">
+                    <div class="browser-frame">
+                         <img src="../img/nsblog/nsblog_screen7.png" alt="Desktop Account" onerror="this.src='https://placehold.co/1000x600/EDF7ED/4A6741?text=Desktop+Login';" />
+                    </div>
+                    <span class="device-label">Desktop View</span>
+                </div>
+                <div class="mobile-wrapper">
+                    <div class="mobile-frame">
+                        <img src="../img/nsblog/nsblog_screen8.png" alt="Mobile Account" onerror="this.src='https://placehold.co/375x812/EDF7ED/4A6741?text=Mobile+Login+Form';" />
+                    </div>
+                    <span class="device-label">Mobile View</span>
+                </div>
+            </div>
+            <figcaption class="pair-caption">
+                Login and registration forms are centered and prominent. Input fields and buttons are sized appropriately for touch interaction on mobile devices.
+            </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+  </main>
+  
+  <footer class="footer">
+    <div class="container">
+      <small>&copy; 2025 by ChienTing Wang</small>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".sub-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (pageYOffset >= sectionTop - 300) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (current && link.getAttribute("href").includes(current)) {
+            link.classList.add("active");
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

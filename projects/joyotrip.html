@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JoYoTrip - Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="joyotrip.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="../index.html">CT.</a>
+      <nav class="nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../resume.pdf" target="_blank" class="nav-link">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <header class="project-hero-wrapper">
+      <div class="container">
+        <div class="hero-text">
+          <h1 class="hero-title">JoYoTrip</h1>
+          <p class="hero-subtitle">A Hyper-Personalized Travel Recommendation System</p>
+        </div>
+        <div class="hero-image-container">
+            <img src="../img/joyotrip/joyotrip.png" alt="JoYoTrip App Interface" onerror="this.src='https://placehold.co/1000x600/E9F2F6/286F8C?text=joyotrip.png';" />
+        </div>
+        <div class="hero-metadata">
+          <div class="meta-col">
+            <h3>Duration</h3>
+            <p>11 Months<br>(NSTC Research Project)</p>
+          </div>
+          <div class="meta-col">
+            <h3>My Role</h3>
+            <p>PM & Logic Designer<br>UX Researcher</p>
+          </div>
+          <div class="meta-col">
+            <h3>Tech Stack</h3>
+            <p>LangGraph, OpenAI API,<br>FastAPI, Kotlin (Android)</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="project-sub-nav" id="sub-nav">
+      <div class="container sub-nav-container">
+        <a href="#overview" class="sub-link">Overview</a>
+        <a href="#research" class="sub-link">Research</a>
+        <a href="#strategy" class="sub-link">Strategy</a>
+        <a href="#design-process" class="sub-link">Design</a>
+        <a href="#architecture" class="sub-link">Architecture</a>
+        <a href="#features" class="sub-link">Features</a>
+        <a href="#testing" class="sub-link">Evaluation</a>
+        <a href="#takeaways" class="sub-link">Takeaways</a>
+      </div>
+    </nav>
+
+    <section id="overview" class="content-section">
+      <div class="container">
+        <span class="section-number">01 OVERVIEW</span>
+        <div class="split-layout">
+          <div class="split-left">
+            <h2 class="section-heading">Solving "Decision Paralysis" in Travel Planning.</h2>
+          </div>
+          <div class="split-right">
+            <p class="section-desc">
+              JoYoTrip is a hyper-personalized recommendation system that combines <strong>Large Language Models (LLMs)</strong> with real-time data. Unlike traditional apps that offer static suggestions, JoYoTrip dynamically adapts itineraries based on weather, user interactions, and real-world constraints.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="content-section">
+      <div class="container">
+        <span class="section-number">02 RESEARCH & INSIGHTS</span>
+        <div class="cards-grid" style="margin-top: 40px;">
+          <div class="method-card">
+            <h4>Desk Research</h4>
+            <span class="big-num">10+</span>
+            <p>Academic Papers</p>
+          </div>
+          <div class="method-card">
+            <h4>Quantitative</h4>
+            <span class="big-num">66</span>
+            <p>Survey Responses</p>
+          </div>
+          <div class="method-card">
+            <h4>Qualitative</h4>
+            <span class="big-num">5</span>
+            <p>In-depth Interviews</p>
+          </div>
+        </div>
+
+        <div class="research-charts-section">
+            <h3 class="subsection-title" style="text-align:center; margin-bottom:40px;">User Insights</h3>
+            <div class="charts-wrapper">
+                <div class="chart-container">
+                    <div class="pie-chart" style="--p1: 60.6; --c1: var(--brand-blue); --c2: #A8D1E3;"></div>
+                    <div class="chart-legend">
+                        <h4>Travel Style Preference</h4>
+                        <div class="legend-item">
+                            <span class="dot" style="background: var(--brand-blue)"></span>
+                            <span>60.6% Plan Ahead</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="dot" style="background: #A8D1E3"></span>
+                            <span>39.4% Spontaneous</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="pie-chart" style="--p1: 63.6; --c1: var(--brand-blue); --c2: #A8D1E3;"></div>
+                    <div class="chart-legend">
+                        <h4>Decision Basis</h4>
+                        <div class="legend-item">
+                            <span class="dot" style="background: var(--brand-blue)"></span>
+                            <span>63.6% Real-time / Reviews</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="dot" style="background: #A8D1E3"></span>
+                            <span>36.4% Personal Preference</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="user-journey-section" style="margin-top: 80px;">
+            <h3 class="subsection-title">User Journey Map</h3>
+            <div class="viz-item">
+                <img src="../img/joyotrip_journey.png" alt="User Journey Map" onerror="this.src='https://placehold.co/1000x400/E3F2FD/286F8C?text=User+Journey+Map';" style="border-radius: 8px; border: 1px solid #eee; width: 100%;" />
+                <p class="caption">Mapping the emotional curve: anxiety peaks when unexpected events occur during the trip.</p>
+            </div>
+        </div>
+
+        <div class="split-layout" style="margin-top: 100px;">
+            <div class="split-left">
+                <h3 class="subsection-title">Why do existing tools fail?</h3>
+                <p class="section-desc">We analyzed market leaders and identified a critical gap: <strong>Static vs. Dynamic.</strong></p>
+            </div>
+            <div class="split-right">
+                <div class="comparison-table">
+                    <div class="c-row header">
+                        <span>Feature</span>
+                        <span>Funliday</span>
+                        <span>ChatGPT</span>
+                        <span class="highlight">JoYoTrip</span>
+                    </div>
+                    <div class="c-row">
+                        <span>Personalization</span>
+                        <span>Static (History)</span>
+                        <span>Text-based</span>
+                        <span class="highlight">Hyper-Personalized</span>
+                    </div>
+                    <div class="c-row">
+                        <span>Real-time Info</span>
+                        <span>No</span>
+                        <span>Unreliable</span>
+                        <span class="highlight">Yes (RAG + API)</span>
+                    </div>
+                    <div class="c-row">
+                        <span>Dynamic Adjustment</span>
+                        <span>Manual</span>
+                        <span>Hard to visualize</span>
+                        <span class="highlight">Auto-Suggest</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="strategy" class="content-section">
+      <div class="container">
+        <span class="section-number">03 STRATEGY</span>
+        <h2 class="section-heading">Defining "Hyper-Personalization"</h2>
+        
+        <p class="section-desc" style="max-width: 800px; margin-bottom: 50px;">
+            Hyper-personalization is the comprehensive consideration of real-time status, context, and environment. It moves beyond static history data to understand user <strong>intent</strong>.
+        </p>
+
+        <div class="highlight-box">
+            <div class="hb-col center-text">
+                <h3>Traditional Personalization</h3>
+                <div class="tag-cloud">
+                    <span class="tag">Behavior-Driven</span>
+                    <span class="tag">Past Records</span>
+                    <span class="tag">Static Recommendations</span>
+                </div>
+            </div>
+            <div class="hb-divider">VS</div>
+            <div class="hb-col center-text">
+                <h3 style="color: var(--brand-blue);">Hyper-Personalization</h3>
+                <div class="tag-cloud">
+                    <span class="tag highlight">Intention-Driven</span>
+                    <span class="tag highlight">Real-time Context</span>
+                    <span class="tag highlight">Dynamic Adjustment</span>
+                </div>
+            </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="design-process" class="content-section">
+      <div class="container">
+        <span class="section-number">04 DESIGN PROCESS</span>
+        <h2 class="section-heading">From Concept to Prototype</h2>
+        <p class="section-desc">
+            We iterated through multiple design phases using Figma. The initial concepts focused on layout structure, while the final prototypes refined visual hierarchy and interaction flows.
+        </p>
+
+        <div class="design-comparison">
+            <div class="design-card">
+                <h4>Initial Concept (Early UI)</h4>
+                <p class="design-desc">Focus on core functionality and basic layout structure.</p>
+                <div class="design-img-box">
+                    <img src="../img/joyotrip/joyotrip_lofi.png" alt="Initial Concept UI" onerror="this.src='https://placehold.co/600x400/FCE4EC/AD1457?text=Initial+Concept';" />
+                </div>
+            </div>
+            <div class="design-card">
+                <h4>Final Prototype (High-Fidelity)</h4>
+                 <p class="design-desc">Refined visual hierarchy and interaction details based on user testing feedback.</p>
+                 <div class="design-img-box">
+                    <img src="../img/joyotrip/joyotrip_hifi.png" alt="Final Prototype UI" onerror="this.src='https://placehold.co/600x400/E3F2FD/286F8C?text=Final+Prototype';" />
+                 </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="content-section">
+      <div class="container">
+        <span class="section-number">05 SYSTEM ARCHITECTURE</span>
+        <h2 class="section-heading">RAG-Based Recommendation Engine</h2>
+        
+        <div class="split-layout">
+            <div class="split-left">
+                <p class="section-desc">
+                    The core of JoYoTrip is a <strong>Retrieval-Augmented Generation (RAG)</strong> framework powered by LangGraph. It ensures that the LLM's creativity is grounded in real-world data.
+                </p>
+                <ul class="role-list" style="margin-top:20px;">
+                    <li><strong>Frontend:</strong> Native Android (Kotlin + Jetpack Compose).</li>
+                    <li><strong>Backend:</strong> Python FastAPI for high-concurrency handling.</li>
+                    <li><strong>Logic:</strong> LangGraph nodes for breaking down planning steps (Preference -> Validation -> Optimization).</li>
+                </ul>
+            </div>
+            <div class="split-right">
+                <div class="architecture-img">
+                    <img src="../img/joyotrip/joyotrip_arch.png" alt="System Architecture Diagram" onerror="this.src='https://placehold.co/600x400/E3F2FD/286F8C?text=System+Architecture+Diagram';" />
+                    <p class="caption">System Flow: Integration of LLM, Google Maps API, and Weather Data.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="content-section" style="background: #f8fcfd;">
+      <div class="container">
+        <span class="section-number">06 SYSTEM FEATURES</span>
+        <h2 class="section-heading">The JoYoTrip Experience</h2>
+
+        <div class="zigzag-row">
+            <div class="zigzag-text">
+                <h3 class="feature-title">1. Hyper-Personalized Itinerary</h3>
+                <p class="section-desc">
+                    Leveraging RAG technology, the system analyzes user preferences and real-time data to construct tailored travel plans. It goes beyond generic suggestions, ensuring every spot aligns with the user's unique intent and constraints.
+                </p>
+            </div>
+            <div class="zigzag-img">
+                <div class="phone-frame-container">
+                    <img src="../img/joyotrip_f_gen.png" alt="Itinerary Gen" onerror="this.src='https://placehold.co/300x650/E3F2FD/286F8C?text=Itinerary+UI';" />
+                </div>
+            </div>
+        </div>
+
+        <div class="zigzag-row reverse">
+            <div class="zigzag-img">
+                <div class="phone-frame-container">
+                    <img src="../img/joyotrip_f_chat.png" alt="Chat Assistant" onerror="this.src='https://placehold.co/300x650/E3F2FD/286F8C?text=Chat+UI';" />
+                </div>
+            </div>
+            <div class="zigzag-text">
+                <h3 class="feature-title">2. Intelligent Chat Assistant</h3>
+                <p class="section-desc">
+                    Acts as a knowledgeable travel companion. It maintains conversational context memory, understanding complex requests and refining itinerary details through natural dialogue interaction.
+                </p>
+            </div>
+        </div>
+
+        <div class="zigzag-row">
+            <div class="zigzag-text">
+                <h3 class="feature-title">3. Dynamic Weather Adaptation</h3>
+                <p class="section-desc">
+                    Integrated with real-time weather APIs. If rain or adverse weather is forecast, the system proactively suggests indoor alternatives and instantly reroutes the itinerary to ensure a smooth experience.
+                </p>
+            </div>
+            <div class="zigzag-img">
+                <div class="phone-frame-container">
+                    <img src="../img/joyotrip_f_weather.png" alt="Weather Adaptation" onerror="this.src='https://placehold.co/300x650/E3F2FD/286F8C?text=Weather+UI';" />
+                </div>
+            </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="advantages" class="content-section">
+      <div class="container">
+        <span class="section-number">07 SYSTEM ADVANTAGES</span>
+        <h2 class="section-heading">Key Technical Strengths</h2>
+        
+        <div class="tech-grid">
+            <div class="tech-card">
+                <h4>Accurate Information (RAG + API)</h4>
+                <p>Knowledge sources are reliable and traceable. By integrating Google Maps & OpenWeather APIs with RAG, we eliminate LLM hallucinations.</p>
+            </div>
+            <div class="tech-card">
+                <h4>Contextual Memory Focus</h4>
+                <p>Unlike generic LLMs that lose context, our system maintains a continuous memory of the trip theme, ensuring seamless adjustments.</p>
+            </div>
+            <div class="tech-card">
+                <h4>One-Stop Planning Interface</h4>
+                <p>A unified interface designed specifically for travel. It allows for efficient planning and instant response to changes, reducing decision fatigue.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testing" class="content-section">
+      <div class="container">
+        <span class="section-number">08 EVALUATION</span>
+        <h2 class="section-heading">Performance Validation</h2>
+        <p class="section-desc" style="margin-bottom: 50px;">
+            We conducted a comprehensive evaluation combining quantitative A/B testing against ChatGPT-4o and qualitative user interviews.
+        </p>
+        
+        <h3 class="subsection-title">1. Quantitative A/B Testing (7-Point Likert Scale)</h3>
+        <p class="section-desc" style="margin-bottom: 30px;">
+            N=30 participants evaluated itineraries generated by both systems. JoYoTrip outperformed ChatGPT across all key metrics.
+        </p>
+
+        <div class="stats-grid-2col">
+            <div class="stat-item">
+                <span class="stat-label">Route Smoothness</span>
+                <div class="stat-bar-group">
+                    <div class="sb-row"><span class="sb-name">ChatGPT</span><div class="sb-bar" style="width: 60%;">4.2</div></div>
+                    <div class="sb-row"><span class="sb-name highlight">JoYoTrip</span><div class="sb-bar highlight" style="width: 77%;">5.4</div></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Preference Fit</span>
+                <div class="stat-bar-group">
+                    <div class="sb-row"><span class="sb-name">ChatGPT</span><div class="sb-bar" style="width: 43%;">3.0</div></div>
+                    <div class="sb-row"><span class="sb-name highlight">JoYoTrip</span><div class="sb-bar highlight" style="width: 73%;">5.1</div></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <span class="stat-label">Time Reasonableness</span>
+                <div class="stat-bar-group">
+                    <div class="sb-row"><span class="sb-name">ChatGPT</span><div class="sb-bar" style="width: 47%;">3.3</div></div>
+                    <div class="sb-row"><span class="sb-name highlight">JoYoTrip</span><div class="sb-bar highlight" style="width: 79%;">5.5</div></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Info Clarity</span>
+                <div class="stat-bar-group">
+                    <div class="sb-row"><span class="sb-name">ChatGPT</span><div class="sb-bar" style="width: 71%;">5.0</div></div>
+                    <div class="sb-row"><span class="sb-name highlight">JoYoTrip</span><div class="sb-bar highlight" style="width: 81%;">5.7</div></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <span class="stat-label">Satisfaction</span>
+                <div class="stat-bar-group">
+                    <div class="sb-row"><span class="sb-name">ChatGPT</span><div class="sb-bar" style="width: 43%;">3.0</div></div>
+                    <div class="sb-row"><span class="sb-name highlight">JoYoTrip</span><div class="sb-bar highlight" style="width: 76%;">5.3</div></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Willingness to Use</span>
+                <div class="stat-bar-group">
+                    <div class="sb-row"><span class="sb-name">ChatGPT</span><div class="sb-bar" style="width: 46%;">3.2</div></div>
+                    <div class="sb-row"><span class="sb-name highlight">JoYoTrip</span><div class="sb-bar highlight" style="width: 74%;">5.2</div></div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="subsection-title" style="margin-top: 60px;">2. Qualitative User Interviews</h3>
+        <div class="insight-box">
+             <p>"JoYoTrip's route is much smoother... ChatGPT often jumps back and forth between locations. JoYoTrip also provides specific restaurant recommendations rather than just general areas."</p>
+             <p style="text-align: right; margin-top: 10px; font-size: 0.9rem;">— Interview Participant</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="takeaways" class="content-section">
+      <div class="container">
+        <span class="section-number">09 TAKEAWAYS</span>
+        <h2 class="section-heading">Project Reflections</h2>
+        
+        <div class="split-layout">
+            <div class="split-left">
+                <h3 class="subsection-title">Challenges Overcome</h3>
+                <p class="section-desc">
+                    Balancing the creative freedom of LLMs with the need for factual accuracy was a major hurdle. Implementing the LangGraph-based RAG structure was critical to grounding the AI's outputs in reality.
+                </p>
+            </div>
+            <div class="split-right">
+                 <h3 class="subsection-title">Impact & Future Scope</h3>
+                 <p class="section-desc">
+                    This project demonstrated the potential of hyper-personalized AI agents in reducing decision fatigue. Future iterations could focus on integrating multi-modal inputs (e.g., image-based preferences) and expanding real-time data sources like live traffic.
+                 </p>
+            </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+  
+  <footer class="footer">
+    <div class="container">
+      <small>&copy; 2025 by ChienTing Wang</small>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".sub-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (pageYOffset >= sectionTop - 300) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (current && link.getAttribute("href").includes(current)) {
+            link.classList.add("active");
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

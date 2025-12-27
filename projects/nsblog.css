@@ -3,9 +3,9 @@
   --fg: #111111;
   --muted: #666666;
   
-  /* --- NEST Theme Colors (Purple) --- */
-  --hero-bg: #F4F1FA;
-  --brand-color: #5E4389; /* 統一名稱為 brand-color 方便管理 */
+  /* --- NSBlog Theme Colors (Nature Green) --- */
+  --hero-bg: #EDF7ED;      /* 極淺的灰綠色背景 */
+  --brand-color: #4A6741;  /* 品牌主色：森林綠 */
   --light-gray-bg: #F9FAFB;
   --border-color: #E5E7EB;
   
@@ -37,7 +37,7 @@ a { text-decoration: none; color: inherit; }
   padding: 0 24px;
 }
 
-/* --- 1. Topbar (與 JoYoTrip 一致：無線條) --- */
+/* --- 1. Topbar (與 JoYoTrip 一致) --- */
 .topbar {
   position: fixed; top: 0; left: 0; right: 0;
   height: var(--header-h);
@@ -54,7 +54,7 @@ a { text-decoration: none; color: inherit; }
 .nav-link { font-weight: 500; font-size: 15px; color: var(--fg); transition: 0.2s; }
 .nav-link:hover { color: var(--brand-color); }
 
-/* --- 2. Hero Section (與 JoYoTrip 一致：無陰影、顏色標題) --- */
+/* --- 2. Hero Section (無陰影、顏色標題) --- */
 .project-hero-wrapper {
   background-color: var(--hero-bg);
   padding: 80px 0 100px 0;
@@ -151,7 +151,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* --- 4. Content Sections Base (統一間距與字體) --- */
-.content-section { padding: 120px 0; } /* 統一間距 */
+.content-section { padding: 120px 0; }
 .section-number {
   display: block;
   font-size: 1rem;
@@ -173,20 +173,15 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.7;
   color: #555;
 }
-.subsection-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-  color: #333;
-}
 .split-layout {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 80px;
   align-items: start;
+  margin-bottom: 60px;
 }
 
-/* --- Overview Cards --- */
+/* --- Overview Cards (Vertical) --- */
 .overview-vertical-stack {
     display: flex; flex-direction: column; gap: 40px; margin-top: 60px;
 }
@@ -206,9 +201,9 @@ a { text-decoration: none; color: inherit; }
 }
 .role-list li { margin-bottom: 10px; }
 
-/* --- Tech Grid (Cards) --- */
+/* --- Feature Grid (Tech Cards) --- */
 .tech-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px;
 }
 .tech-card {
   background: #f9f9f9; padding: 35px; border-radius: 12px;
@@ -220,97 +215,148 @@ a { text-decoration: none; color: inherit; }
 .tech-card h4 { margin-bottom: 15px; font-size: 1.2rem; font-weight: 700; color: var(--brand-color); }
 .tech-card p { font-size: 1rem; color: #666; line-height: 1.6; }
 
-/* --- Scenarios (NEST Specific) --- */
-.scenarios-wrapper {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+/* --- System Interface (Side-by-Side Pairs) --- */
+
+/* 每一組對照的容器 */
+.interface-pair {
+    margin: 0 0 100px 0;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--border-color);
 }
-.scenario-card {
-    background: #fff; border: 1px solid var(--border-color);
-    border-radius: 16px; padding: 40px;
-    display: flex; flex-direction: column; justify-content: space-between;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+.interface-pair:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
 }
-.scenario-card h4 { margin-bottom: 15px; font-size: 1.2rem; color: var(--brand-color); font-weight: 700;}
-.scenario-card p { color: #555; line-height: 1.6; font-style: italic; margin-bottom: 25px; font-size: 1.05rem;}
-.s-solution {
-    background: var(--hero-bg); color: var(--brand-color);
-    padding: 15px; border-radius: 8px; font-weight: 600; font-size: 0.95rem;
+
+/* 標題 */
+.pair-header h3 {
     text-align: center;
+    font-size: 1.5rem; /* 加大標題 */
+    color: var(--brand-color);
+    margin-bottom: 40px;
+    font-weight: 700;
 }
 
-/* --- Database Images (使用 JoYoTrip 的 Architecture 樣式) --- */
-.architecture-img {
-    background: #fff;
-    padding: 25px;
-    border-radius: 16px;
-    border: 1px solid #eee;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-.architecture-img img { width: 100%; height: auto; display: block; }
-.architecture-img.full-width { max-width: 900px; margin: 0 auto; }
-
-.caption {
-    text-align: center; margin-top: 15px; font-size: 0.95rem; color: #777; font-style: italic;
+/* 排版容器：左大右小，底部對齊 */
+.pair-layout {
+    display: flex;
+    gap: 50px;
+    align-items: flex-end; /* 底部對齊 */
+    justify-content: center;
+    margin-bottom: 30px;
 }
 
-/* --- Insight Box --- */
-.insight-box {
-  background: var(--hero-bg); border-left: 6px solid var(--brand-color);
-  padding: 40px; margin-top: 50px; border-radius: 12px;
-  font-size: 1.2rem; color: var(--brand-color); font-weight: 500; font-style: italic;
-  text-align: center;
+/* Desktop 區塊 */
+.desktop-wrapper {
+    flex: 1; /* 自然伸縮 */
+    min-width: 0; /* 防止被擠壓 */
 }
 
-/* --- System Interface Gallery --- */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
-  margin-top: 60px;
-}
-.screen-card {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* Mobile 區塊 (加寬至 320px) */
+.mobile-wrapper {
+    flex: 0 0 320px; 
 }
 
-/* Browser Frame: 簡潔化，去背 */
+/* 圖片下方的文字標籤 */
+.device-label {
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+/* 說明文字 */
+.pair-caption {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+
+/* --- 模擬視窗樣式 (無邊框、無白邊、對齊版) --- */
+
+/* 1. 電腦版視窗 */
 .browser-frame {
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  background: #f9f9f9;
-  height: 380px; 
-  width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    background: transparent;
+    
+    width: 100%;
+    height: 400px; /* 固定高度，與手機版一致 */
+    
+    transition: transform 0.3s ease;
 }
+.browser-frame:hover { transform: translateY(-5px); }
 .browser-frame img {
-  width: 100%; height: 100%; 
-  object-fit: cover; 
-  object-position: top center; 
-  display: block;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: top left; 
+    display: block;
 }
 
-.screen-card figcaption h4 {
-  font-size: 1.2rem; color: var(--brand-color); margin-bottom: 10px; font-weight: 700;
+/* 2. 手機版視窗 */
+.mobile-frame {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    background: transparent;
+    
+    /* 尺寸設定 */
+    height: 400px; /* 高度不變，維持對齊 */
+    width: 320px;  /* 固定寬度 */
+    
+    transition: transform 0.3s ease;
 }
-.screen-card figcaption p {
-  font-size: 1rem; color: #666; line-height: 1.6;
+
+.mobile-frame:hover { transform: translateY(-5px); }
+
+.mobile-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: top center; 
+    display: block;
 }
 
 .footer { background: #111; color: #fff; padding: 50px 0; text-align: center; }
 
-/* Responsive */
+/* --- RWD --- */
 @media (max-width: 900px) {
-  .hero-title { font-size: 2.8rem; }
-  .hero-metadata { grid-template-columns: 1fr; text-align: center; gap: 30px;}
-  .split-layout { grid-template-columns: 1fr; gap: 40px; }
-  
-  .tech-grid { grid-template-columns: 1fr; }
-  .scenarios-wrapper { grid-template-columns: 1fr; }
-  .project-sub-nav { top: 60px; }
-  
-  .gallery-grid { grid-template-columns: 1fr; gap: 50px; }
-  .browser-frame { height: 280px; }
+    .hero-title { font-size: 2.8rem; }
+    .hero-metadata { grid-template-columns: 1fr; text-align: center; gap: 30px;}
+    .split-layout { grid-template-columns: 1fr; gap: 40px; }
+    .tech-grid { grid-template-columns: 1fr; }
+    .project-sub-nav { top: 60px; }
+
+    .pair-layout {
+        flex-direction: column; /* 手機版觀看時，改成垂直排列 */
+        align-items: center;
+        gap: 40px;
+    }
+    .desktop-wrapper, .mobile-wrapper {
+        width: 100%;
+        flex: auto;
+    }
+    
+    /* 手機上瀏覽時，不需要強制高度 */
+    .browser-frame {
+        height: auto; 
+        aspect-ratio: 16/9;
+    }
+    
+    .mobile-frame {
+        height: auto; 
+        width: 70%; 
+        max-width: 300px;
+        aspect-ratio: 9/16; 
+    }
 }
