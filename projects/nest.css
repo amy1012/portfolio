@@ -5,7 +5,7 @@
   
   /* --- NEST Theme Colors (Purple) --- */
   --hero-bg: #F4F1FA;
-  --brand-color: #5E4389; /* 統一名稱為 brand-color 方便管理 */
+  --brand-color: #5E4389; 
   --light-gray-bg: #F9FAFB;
   --border-color: #E5E7EB;
   
@@ -37,11 +37,12 @@ a { text-decoration: none; color: inherit; }
   padding: 0 24px;
 }
 
-/* --- 1. Topbar (與 JoYoTrip 一致：無線條) --- */
+/* --- 1. Topbar (UPDATED) --- */
 .topbar {
   position: fixed; top: 0; left: 0; right: 0;
   height: var(--header-h);
-  background: #fff;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   z-index: 1000;
   display: flex; align-items: center;
 }
@@ -49,12 +50,18 @@ a { text-decoration: none; color: inherit; }
   width: 100%;
   display: flex; justify-content: space-between; align-items: center;
 }
-.brand { font-weight: 800; font-size: 24px; letter-spacing: -0.5px; }
-.nav { display: flex; gap: 24px; }
-.nav-link { font-weight: 500; font-size: 15px; color: var(--fg); transition: 0.2s; }
-.nav-link:hover { color: var(--brand-color); }
+.brand { 
+  font-weight: 800; font-size: 28px; letter-spacing: .5px;
+  color: #000; 
+}
+.nav { display: flex; gap: 28px; }
+.nav-link { 
+  font-weight: 600; padding: 8px 2px; border-radius: 6px;
+  color: #000; transition: 0.2s; font-size: 16px;
+}
+.nav-link:hover { color: #6b7280; }
 
-/* --- 2. Hero Section (與 JoYoTrip 一致：無陰影、顏色標題) --- */
+/* --- 2. Hero Section --- */
 .project-hero-wrapper {
   background-color: var(--hero-bg);
   padding: 80px 0 100px 0;
@@ -66,7 +73,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 800;
   letter-spacing: -1px;
   margin-bottom: 16px;
-  color: var(--brand-color); /* 品牌色標題 */
+  color: var(--brand-color);
 }
 .hero-subtitle {
   font-size: 1.3rem;
@@ -79,10 +86,7 @@ a { text-decoration: none; color: inherit; }
   max-width: 900px;
 }
 .hero-image-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-  /* 移除圓角與陰影，保持一致 */
+  width: 100%; height: auto; display: block;
 }
 
 .hero-metadata {
@@ -93,7 +97,6 @@ a { text-decoration: none; color: inherit; }
   margin: 0 auto;
   text-align: left;
   padding-top: 30px;
-  /* 移除上方線條 */
 }
 .meta-col h3 {
   font-size: 0.9rem;
@@ -110,6 +113,20 @@ a { text-decoration: none; color: inherit; }
   color: #333;
 }
 
+/* --- Team Section Style --- */
+.team-section {
+    max-width: 800px; margin: 40px auto 0 auto;
+    text-align: left; padding-top: 24px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+.team-section h3 {
+    font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;
+    color: #666; margin-bottom: 10px; font-weight: 700;
+}
+.team-section p {
+    font-size: 1rem; color: #444; line-height: 1.6;
+}
+
 /* --- 3. Sticky Sub-Nav --- */
 .project-sub-nav {
   position: sticky;
@@ -123,76 +140,48 @@ a { text-decoration: none; color: inherit; }
   transition: all 0.3s ease;
 }
 .sub-nav-container {
-  display: flex;
-  gap: 32px;
-  overflow-x: auto;
-  white-space: nowrap;
+  display: flex; gap: 32px; overflow-x: auto; white-space: nowrap;
   scrollbar-width: none;
 }
 .sub-nav-container::-webkit-scrollbar { display: none; }
 
 .sub-link {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #999;
-  position: relative;
-  padding: 19px 0;
-  transition: color 0.3s;
+  font-size: 0.95rem; font-weight: 500; color: #999;
+  position: relative; padding: 19px 0; transition: color 0.3s;
 }
 .sub-link:hover { color: var(--brand-color); }
 .sub-link.active {
-  color: var(--brand-color);
-  font-weight: 700;
+  color: var(--brand-color); font-weight: 700;
 }
 .sub-link.active::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
   height: 3px; background: var(--brand-color);
 }
 
-/* --- 4. Content Sections Base (統一間距與字體) --- */
-.content-section { padding: 120px 0; } /* 統一間距 */
+/* --- Content Sections --- */
+.content-section { padding: 120px 0; } 
 .section-number {
-  display: block;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--brand-color);
-  margin-bottom: 15px;
-  font-family: sans-serif;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  display: block; font-size: 1rem; font-weight: 700; color: var(--brand-color);
+  margin-bottom: 15px; font-family: sans-serif; letter-spacing: 1px; text-transform: uppercase;
 }
 .section-heading {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 30px;
-  color: #222;
+  font-size: 2.5rem; font-weight: 800; margin-bottom: 30px; color: #222;
 }
 .section-desc {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: #555;
+  font-size: 1.15rem; line-height: 1.7; color: #555;
 }
 .subsection-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-  color: #333;
+  font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; color: #333;
 }
 .split-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 80px;
-  align-items: start;
+  display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start; margin-bottom: 60px;
 }
 
-/* --- Overview Cards --- */
 .overview-vertical-stack {
     display: flex; flex-direction: column; gap: 40px; margin-top: 60px;
 }
 .ov-card {
-    background: var(--light-gray-bg); 
-    border-radius: 16px; padding: 50px; width: 100%;
+    background: var(--light-gray-bg); border-radius: 16px; padding: 50px; width: 100%;
 }
 .ov-title {
     font-size: 1rem; margin-bottom: 30px; text-transform: uppercase;
@@ -206,7 +195,6 @@ a { text-decoration: none; color: inherit; }
 }
 .role-list li { margin-bottom: 10px; }
 
-/* --- Tech Grid (Cards) --- */
 .tech-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
 }
@@ -220,7 +208,6 @@ a { text-decoration: none; color: inherit; }
 .tech-card h4 { margin-bottom: 15px; font-size: 1.2rem; font-weight: 700; color: var(--brand-color); }
 .tech-card p { font-size: 1rem; color: #666; line-height: 1.6; }
 
-/* --- Scenarios (NEST Specific) --- */
 .scenarios-wrapper {
     display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
 }
@@ -234,26 +221,19 @@ a { text-decoration: none; color: inherit; }
 .scenario-card p { color: #555; line-height: 1.6; font-style: italic; margin-bottom: 25px; font-size: 1.05rem;}
 .s-solution {
     background: var(--hero-bg); color: var(--brand-color);
-    padding: 15px; border-radius: 8px; font-weight: 600; font-size: 0.95rem;
-    text-align: center;
+    padding: 15px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-align: center;
 }
 
-/* --- Database Images (使用 JoYoTrip 的 Architecture 樣式) --- */
 .architecture-img {
-    background: #fff;
-    padding: 25px;
-    border-radius: 16px;
-    border: 1px solid #eee;
+    background: #fff; padding: 25px; border-radius: 16px; border: 1px solid #eee;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 .architecture-img img { width: 100%; height: auto; display: block; }
 .architecture-img.full-width { max-width: 900px; margin: 0 auto; }
-
 .caption {
     text-align: center; margin-top: 15px; font-size: 0.95rem; color: #777; font-style: italic;
 }
 
-/* --- Insight Box --- */
 .insight-box {
   background: var(--hero-bg); border-left: 6px solid var(--brand-color);
   padding: 40px; margin-top: 50px; border-radius: 12px;
@@ -261,37 +241,19 @@ a { text-decoration: none; color: inherit; }
   text-align: center;
 }
 
-/* --- System Interface Gallery --- */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
-  margin-top: 60px;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px; margin-top: 60px;
 }
 .screen-card {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  margin: 0; display: flex; flex-direction: column; gap: 20px;
 }
-
-/* Browser Frame: 簡潔化，去背 */
 .browser-frame {
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  background: #f9f9f9;
-  height: 380px; 
-  width: 100%;
+  border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08); background: #f9f9f9; height: 380px; width: 100%;
 }
 .browser-frame img {
-  width: 100%; height: 100%; 
-  object-fit: cover; 
-  object-position: top center; 
-  display: block;
+  width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;
 }
-
 .screen-card figcaption h4 {
   font-size: 1.2rem; color: var(--brand-color); margin-bottom: 10px; font-weight: 700;
 }
@@ -301,16 +263,13 @@ a { text-decoration: none; color: inherit; }
 
 .footer { background: #111; color: #fff; padding: 50px 0; text-align: center; }
 
-/* Responsive */
 @media (max-width: 900px) {
   .hero-title { font-size: 2.8rem; }
   .hero-metadata { grid-template-columns: 1fr; text-align: center; gap: 30px;}
   .split-layout { grid-template-columns: 1fr; gap: 40px; }
-  
   .tech-grid { grid-template-columns: 1fr; }
   .scenarios-wrapper { grid-template-columns: 1fr; }
   .project-sub-nav { top: 60px; }
-  
   .gallery-grid { grid-template-columns: 1fr; gap: 50px; }
   .browser-frame { height: 280px; }
 }

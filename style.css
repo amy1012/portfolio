@@ -71,7 +71,7 @@ body {
   transform: translateX(-50%);
   z-index: 10;
   cursor: pointer;
-  animation: bounce 2s infinite; /* 增加一點彈跳動畫讓它更顯眼 */
+  animation: bounce 2s infinite; 
 }
 .scroll-hint a {
   text-decoration: none; border: none; color: inherit; display: block;
@@ -87,14 +87,14 @@ body {
 }
 
 /* --- Project Sections / Cards --- */
-/* Projects Anchor - 用於修正點擊連結時的偏移 */
+/* Projects Anchor */
 #projects {
   scroll-margin-top: var(--header-h);
 }
 
 .project-page {
   padding: var(--page-pad) 0;
-  border-bottom: 1px solid transparent; /* 避免 margin collapse */
+  border-bottom: 1px solid transparent; 
 }
 .project-page .container {
   width: 100%; display: flex; justify-content: center;
@@ -108,7 +108,6 @@ body {
   padding: 36px;
   background: #fff;
   border-radius: 28px;
-  /* 預設無陰影，只有 hover 時浮起 */
   transition: box-shadow .3s ease, transform .3s ease;
 }
 .project-card:hover,
@@ -150,12 +149,12 @@ body {
   transform: scale(1.03);
 }
 
-/* --- Footer (確保顯示正確) --- */
+/* --- Footer --- */
 .footer {
   background: #000;
   color: #fff;
   width: 100%;
-  position: relative; /* 確保 z-index 生效 */
+  position: relative; 
   z-index: 10;
 }
 .footer .container {
@@ -201,14 +200,21 @@ body {
 .profile-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
 
 .profile-info { flex: 1; }
-.profile-info h3 { font-size: 1.5rem; margin-bottom: 16px; font-weight: 700; }
-.bio-text { font-size: 1rem; line-height: 1.6; color: #444; margin-bottom: 24px; }
 
-.contact-list { list-style: none; padding: 0; margin: 0; }
-.contact-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-.contact-list a { text-decoration: none; color: #444; font-weight: 500; transition: color 0.2s; }
-.contact-list a:hover { color: #000; }
+/* Contact Info Styling (Clean List) */
+.contact-block {
+    display: flex; flex-direction: column; gap: 8px;
+    margin-bottom: 24px;
+}
+.contact-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 1.05rem; color: #333; font-weight: 500;
+}
+.contact-item a { text-decoration: none; color: inherit; transition: color 0.2s;}
+.contact-item a:hover { color: #000; text-decoration: underline; }
+.contact-item .material-symbols-outlined { color: #888; font-size: 1.2rem; }
 
+.bio-text { font-size: 1rem; line-height: 1.6; color: #555; }
 
 /* --- 2. Interests Section --- */
 .interests-section {
@@ -216,7 +222,7 @@ body {
   background: #fafafa; /* 淺灰底 */
 }
 .interests-inner {
-  max-width: 1000px; /* 加寬一點以容納三張照片 */
+  max-width: 1000px; 
   margin: 0 auto;
   display: flex; flex-direction: column; gap: 120px;
 }
@@ -227,47 +233,38 @@ body {
 .int-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 16px; }
 .int-desc { font-size: 1.1rem; line-height: 1.8; color: #444; }
 
-/* ★ 關鍵：三張照片平行排列 ★ */
+/* Photo Row (Volleyball) */
 .photo-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 切成三等份 */
-  gap: 20px; /* 照片間距 */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   width: 100%;
 }
 
 .photo-item {
   width: 100%;
-  
-  /* ★ 修改這裡：改為 5:7 的直式比例 ★ */
   aspect-ratio: 5 / 7; 
-  
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
 }
 
-.photo-item:hover {
-  transform: translateY(-5px);
-}
+.photo-item:hover { transform: translateY(-5px); }
+.photo-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-.photo-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 填滿格子，多餘部分會裁切 */
-  display: block;
+/* Spotify Container */
+.spotify-container {
+    width: 100%; max-width: 800px; margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 12px; overflow: hidden;
 }
-
 
 /* --- RWD --- */
 @media (max-width: 768px) {
   .profile-card { flex-direction: column; text-align: center; gap: 30px; }
   .profile-img-wrapper { width: 180px; height: 180px; }
-  .contact-list li { justify-content: center; }
+  .contact-block { align-items: center; }
   
-  /* 手機版照片變垂直排列，或者改成橫向滑動 */
-  .photo-row {
-    grid-template-columns: 1fr; /* 變成一欄 */
-    gap: 20px;
-  }
+  .photo-row { grid-template-columns: 1fr; gap: 20px; }
 }

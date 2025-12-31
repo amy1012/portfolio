@@ -4,8 +4,8 @@
   --muted: #666666;
   
   /* --- NSBlog Theme Colors (Nature Green) --- */
-  --hero-bg: #EDF7ED;      /* 極淺的灰綠色背景 */
-  --brand-color: #4A6741;  /* 品牌主色：森林綠 */
+  --hero-bg: #EDF7ED;      
+  --brand-color: #4A6741;  
   --light-gray-bg: #F9FAFB;
   --border-color: #E5E7EB;
   
@@ -37,11 +37,12 @@ a { text-decoration: none; color: inherit; }
   padding: 0 24px;
 }
 
-/* --- 1. Topbar (與 JoYoTrip 一致) --- */
+/* --- 1. Topbar (UPDATED) --- */
 .topbar {
   position: fixed; top: 0; left: 0; right: 0;
   height: var(--header-h);
-  background: #fff;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   z-index: 1000;
   display: flex; align-items: center;
 }
@@ -49,12 +50,18 @@ a { text-decoration: none; color: inherit; }
   width: 100%;
   display: flex; justify-content: space-between; align-items: center;
 }
-.brand { font-weight: 800; font-size: 24px; letter-spacing: -0.5px; }
-.nav { display: flex; gap: 24px; }
-.nav-link { font-weight: 500; font-size: 15px; color: var(--fg); transition: 0.2s; }
-.nav-link:hover { color: var(--brand-color); }
+.brand { 
+  font-weight: 800; font-size: 28px; letter-spacing: .5px;
+  color: #000; 
+}
+.nav { display: flex; gap: 28px; }
+.nav-link { 
+  font-weight: 600; padding: 8px 2px; border-radius: 6px;
+  color: #000; transition: 0.2s; font-size: 16px;
+}
+.nav-link:hover { color: #6b7280; }
 
-/* --- 2. Hero Section (無陰影、顏色標題) --- */
+/* --- 2. Hero Section --- */
 .project-hero-wrapper {
   background-color: var(--hero-bg);
   padding: 80px 0 100px 0;
@@ -66,7 +73,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 800;
   letter-spacing: -1px;
   margin-bottom: 16px;
-  color: var(--brand-color); /* 品牌色標題 */
+  color: var(--brand-color);
 }
 .hero-subtitle {
   font-size: 1.3rem;
@@ -79,10 +86,7 @@ a { text-decoration: none; color: inherit; }
   max-width: 900px;
 }
 .hero-image-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-  /* 移除圓角與陰影，保持一致 */
+  width: 100%; height: auto; display: block;
 }
 
 .hero-metadata {
@@ -93,7 +97,6 @@ a { text-decoration: none; color: inherit; }
   margin: 0 auto;
   text-align: left;
   padding-top: 30px;
-  /* 移除上方線條 */
 }
 .meta-col h3 {
   font-size: 0.9rem;
@@ -110,6 +113,20 @@ a { text-decoration: none; color: inherit; }
   color: #333;
 }
 
+/* --- Team Section Style --- */
+.team-section {
+    max-width: 800px; margin: 40px auto 0 auto;
+    text-align: left; padding-top: 24px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+.team-section h3 {
+    font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;
+    color: #666; margin-bottom: 10px; font-weight: 700;
+}
+.team-section p {
+    font-size: 1rem; color: #444; line-height: 1.6;
+}
+
 /* --- 3. Sticky Sub-Nav --- */
 .project-sub-nav {
   position: sticky;
@@ -123,71 +140,45 @@ a { text-decoration: none; color: inherit; }
   transition: all 0.3s ease;
 }
 .sub-nav-container {
-  display: flex;
-  gap: 32px;
-  overflow-x: auto;
-  white-space: nowrap;
+  display: flex; gap: 32px; overflow-x: auto; white-space: nowrap;
   scrollbar-width: none;
 }
 .sub-nav-container::-webkit-scrollbar { display: none; }
 
 .sub-link {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #999;
-  position: relative;
-  padding: 19px 0;
-  transition: color 0.3s;
+  font-size: 0.95rem; font-weight: 500; color: #999;
+  position: relative; padding: 19px 0; transition: color 0.3s;
 }
 .sub-link:hover { color: var(--brand-color); }
 .sub-link.active {
-  color: var(--brand-color);
-  font-weight: 700;
+  color: var(--brand-color); font-weight: 700;
 }
 .sub-link.active::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
   height: 3px; background: var(--brand-color);
 }
 
-/* --- 4. Content Sections Base (統一間距與字體) --- */
+/* --- Content Sections --- */
 .content-section { padding: 120px 0; }
 .section-number {
-  display: block;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--brand-color);
-  margin-bottom: 15px;
-  font-family: sans-serif;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  display: block; font-size: 1rem; font-weight: 700; color: var(--brand-color);
+  margin-bottom: 15px; font-family: sans-serif; letter-spacing: 1px; text-transform: uppercase;
 }
 .section-heading {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 30px;
-  color: #222;
+  font-size: 2.5rem; font-weight: 800; margin-bottom: 30px; color: #222;
 }
 .section-desc {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: #555;
+  font-size: 1.15rem; line-height: 1.7; color: #555;
 }
 .split-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 80px;
-  align-items: start;
-  margin-bottom: 60px;
+  display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start; margin-bottom: 60px;
 }
 
-/* --- Overview Cards (Vertical) --- */
 .overview-vertical-stack {
     display: flex; flex-direction: column; gap: 40px; margin-top: 60px;
 }
 .ov-card {
-    background: var(--light-gray-bg); 
-    border-radius: 16px; padding: 50px; width: 100%;
+    background: var(--light-gray-bg); border-radius: 16px; padding: 50px; width: 100%;
 }
 .ov-title {
     font-size: 1rem; margin-bottom: 30px; text-transform: uppercase;
@@ -201,7 +192,6 @@ a { text-decoration: none; color: inherit; }
 }
 .role-list li { margin-bottom: 10px; }
 
-/* --- Feature Grid (Tech Cards) --- */
 .tech-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px;
 }
@@ -215,148 +205,55 @@ a { text-decoration: none; color: inherit; }
 .tech-card h4 { margin-bottom: 15px; font-size: 1.2rem; font-weight: 700; color: var(--brand-color); }
 .tech-card p { font-size: 1rem; color: #666; line-height: 1.6; }
 
-/* --- System Interface (Side-by-Side Pairs) --- */
-
-/* 每一組對照的容器 */
 .interface-pair {
-    margin: 0 0 100px 0;
-    padding-bottom: 60px;
-    border-bottom: 1px solid var(--border-color);
+    margin: 0 0 100px 0; padding-bottom: 60px; border-bottom: 1px solid var(--border-color);
 }
-.interface-pair:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-}
-
-/* 標題 */
+.interface-pair:last-child { border-bottom: none; margin-bottom: 0; }
 .pair-header h3 {
-    text-align: center;
-    font-size: 1.5rem; /* 加大標題 */
-    color: var(--brand-color);
-    margin-bottom: 40px;
-    font-weight: 700;
+    text-align: center; font-size: 1.5rem; color: var(--brand-color); margin-bottom: 40px; font-weight: 700;
 }
-
-/* 排版容器：左大右小，底部對齊 */
 .pair-layout {
-    display: flex;
-    gap: 50px;
-    align-items: flex-end; /* 底部對齊 */
-    justify-content: center;
-    margin-bottom: 30px;
+    display: flex; gap: 50px; align-items: flex-end; justify-content: center; margin-bottom: 30px;
 }
-
-/* Desktop 區塊 */
-.desktop-wrapper {
-    flex: 1; /* 自然伸縮 */
-    min-width: 0; /* 防止被擠壓 */
-}
-
-/* Mobile 區塊 (加寬至 320px) */
-.mobile-wrapper {
-    flex: 0 0 320px; 
-}
-
-/* 圖片下方的文字標籤 */
+.desktop-wrapper { flex: 1; min-width: 0; }
+.mobile-wrapper { flex: 0 0 320px; }
 .device-label {
-    display: block;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #888;
-    margin-top: 15px;
-    font-weight: 500;
+    display: block; text-align: center; font-size: 0.9rem; color: #888; margin-top: 15px; font-weight: 500;
 }
-
-/* 說明文字 */
 .pair-caption {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    color: #555;
-    line-height: 1.7;
-    font-size: 1rem;
+    text-align: center; max-width: 800px; margin: 0 auto; color: #555; line-height: 1.7; font-size: 1rem;
 }
 
-
-/* --- 模擬視窗樣式 (無邊框、無白邊、對齊版) --- */
-
-/* 1. 電腦版視窗 */
 .browser-frame {
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    background: transparent;
-    
-    width: 100%;
-    height: 400px; /* 固定高度，與手機版一致 */
-    
+    border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); background: transparent; width: 100%; height: 400px;
     transition: transform 0.3s ease;
 }
 .browser-frame:hover { transform: translateY(-5px); }
 .browser-frame img {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    object-position: top left; 
-    display: block;
+    width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block;
 }
 
-/* 2. 手機版視窗 */
 .mobile-frame {
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    background: transparent;
-    
-    /* 尺寸設定 */
-    height: 400px; /* 高度不變，維持對齊 */
-    width: 320px;  /* 固定寬度 */
-    
+    border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); background: transparent; height: 400px; width: 320px;
     transition: transform 0.3s ease;
 }
-
 .mobile-frame:hover { transform: translateY(-5px); }
-
 .mobile-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    object-position: top center; 
-    display: block;
+    width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;
 }
 
 .footer { background: #111; color: #fff; padding: 50px 0; text-align: center; }
 
-/* --- RWD --- */
 @media (max-width: 900px) {
     .hero-title { font-size: 2.8rem; }
     .hero-metadata { grid-template-columns: 1fr; text-align: center; gap: 30px;}
     .split-layout { grid-template-columns: 1fr; gap: 40px; }
     .tech-grid { grid-template-columns: 1fr; }
     .project-sub-nav { top: 60px; }
-
-    .pair-layout {
-        flex-direction: column; /* 手機版觀看時，改成垂直排列 */
-        align-items: center;
-        gap: 40px;
-    }
-    .desktop-wrapper, .mobile-wrapper {
-        width: 100%;
-        flex: auto;
-    }
-    
-    /* 手機上瀏覽時，不需要強制高度 */
-    .browser-frame {
-        height: auto; 
-        aspect-ratio: 16/9;
-    }
-    
-    .mobile-frame {
-        height: auto; 
-        width: 70%; 
-        max-width: 300px;
-        aspect-ratio: 9/16; 
-    }
+    .pair-layout { flex-direction: column; align-items: center; gap: 40px; }
+    .desktop-wrapper, .mobile-wrapper { width: 100%; flex: auto; }
+    .browser-frame { height: auto; aspect-ratio: 16/9; }
+    .mobile-frame { height: auto; width: 70%; max-width: 300px; aspect-ratio: 9/16; }
 }
