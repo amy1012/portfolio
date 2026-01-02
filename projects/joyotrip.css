@@ -122,8 +122,12 @@ a { text-decoration: none; color: inherit; }
     color: #666; margin-bottom: 10px; font-weight: 700;
 }
 .team-section p {
-    font-size: 1rem; color: #444; line-height: 1.6;
+    font-size: 1.1rem; color: #333; line-height: 1.5; font-weight: 600;
 }
+.team-section{
+  text-align: center;
+}
+
 
 /* --- 3. Sticky Sub-Nav --- */
 .project-sub-nav {
@@ -193,6 +197,84 @@ a { text-decoration: none; color: inherit; }
 
 .viz-item { text-align: center; }
 .caption { margin-top: 15px; font-size: 0.95rem; color: #777; font-style: italic; }
+/* --- User Journey: align typography & spacing with existing content --- */
+
+
+/* 讓 Persona/Scenario/Expectations 跟頁面內容寬度一致（使用 container 的 1100px） */
+.journey-context-plain{
+  width: 100%;
+  max-width: var(--container-w);
+  margin: 0 auto 24px auto;
+}
+
+/* Persona 先單行，往下留出跟內文一致的距離 */
+.journey-persona{
+  margin-bottom: 18px;
+}
+
+.journey-two-col{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+/* ✅ 不要任何線、不要卡片感 */
+.journey-block{
+  padding-top: 0;
+  border-top: none;
+}
+
+.journey-label{
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #666; /* 跟 meta-col h3 / team-section h3 的灰色系一致 */
+  margin-bottom: 10px;
+}
+
+/* ✅ 字體大小、行距對齊你全站的 section-desc */
+.journey-content{
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* list 也對齊 section-desc 的字級與行距 */
+.journey-list{
+  margin: 0;
+  padding-left: 20px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #555;
+}
+.journey-list li{
+  margin: 8px 0;
+}
+
+/* 桌機：Scenario / Expectations 並排，跟 split-layout 的視覺節奏相近 */
+@media (min-width: 900px){
+  .journey-two-col{
+    grid-template-columns: 1.4fr 1fr;
+    column-gap: 60px; /* 跟 split-layout gap 有一致感 */
+    align-items: start;
+  }
+}
+
+/* --- User Journey image: remove frame/border/shadow/radius completely --- */
+.viz-item-journey{
+  text-align: left; /* 讓 caption 跟內文閱讀方向一致，可改回 center 也行 */
+}
+
+.journey-img{
+  width: 100%;
+  height: auto;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent;
+  display: block;
+}
 
 .comparison-table {
   width: 100%; border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; background: #fff;
